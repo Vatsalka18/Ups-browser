@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Pacer Power Solutions: start preview",
+            "type": "shell",
+            "command": "python3 -m http.server 8080",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "pacer-preview",
+                "pattern": {
+                    "regexp": "^(Serving HTTP on .*)$",
+                    "message": 1
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Serving HTTP on",
+                    "endsPattern": "Serving HTTP on"
+                }
+            }
+        }
+    ]
+}
